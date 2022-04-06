@@ -1,3 +1,7 @@
+
+
+data.path <- file.path(".","Data")
+
 #Set the url for the data
 url <- "https://files.consumerfinance.gov/ccdb/complaints.csv.zip"
 
@@ -5,15 +9,15 @@ url <- "https://files.consumerfinance.gov/ccdb/complaints.csv.zip"
 #https://cfpb.github.io/api/ccdb/fields.html
 
 #Check if the data directory exists and create it if it doesn't
-if(!dir.exists("./Data")){
-  dir.create("./Data")
+if(!dir.exists(data.path)){
+  dir.create(data.path)
 }
 
-#Download the data to the data folder
-download.file(url, destfile = paste0("./Data/", basename(url)))
+data.file <- file.path(data.path, basename(url))
 
-?getwd()
+#Download the data to the data folder
+download.file(url, destfile = data.file)
+
 
 #Unzip everything
-unzip(zipfile = paste0("./Data/", basename(url)), 
-      exdir = "./Data")
+unzip(zipfile = data.file,exdir = data.path)
