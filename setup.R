@@ -18,6 +18,9 @@ using<-function(...) {
 
 using(global.pkgs)
 
+#source lib scripts
+source("lib/download_unzip_data.R")
+
 # Setup project directories
 rawdata.path <- file.path(".",config$data_folder,config$raw_data_subfolder)
 processed_data.path <- file.path(".",config$data_folder,
@@ -44,3 +47,10 @@ data.url <- config$data_url
 #datafile
 data.filename <- basename(data_url)
 data.file <- file.path(data.path,data.filename)
+
+#download data
+if(config$refresh_data) {
+  dl_metadata <- download_unzip_data(url=data.url,dest=rawdata.path)
+}
+
+
