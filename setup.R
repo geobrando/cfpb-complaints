@@ -45,7 +45,7 @@ if(config$clear_output) {
 data.url <- config$data_url
 
 #datafile
-data.filename <- basename(data_url)
+data.filename <- basename(data.url)
 data.file <- file.path(data.path,data.filename)
 
 #download data

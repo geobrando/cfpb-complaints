@@ -1,5 +1,5 @@
 default:
-  global_pkgs: ["config","tidyverse"]
+  global_pkgs: ["config","tidyverse","dtplyr"]
   data_url: "https://files.consumerfinance.gov/ccdb/complaints.csv.zip"
   data_folder: "data"
   raw_data_subfolder: "raw"
