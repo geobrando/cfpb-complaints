@@ -23,11 +23,11 @@ source("lib/download_unzip_data.R")
 
 # Setup project directories
 rawdata.path <- file.path(".",config$data_folder,config$raw_data_subfolder)
-processed_data.path <- file.path(".",config$data_folder,
+processeddata.path <- file.path(".",config$data_folder,
                                  config$processed_data_subfolder)
 output.path <- file.path(".",config$output_folder)
 
-paths <- c(rawdata.path,processed_data.path,output.path)
+paths <- c(rawdata.path,processeddata.path,output.path)
 
 for (dir in paths) {
   if(!dir.exists(dir)) {dir.create(dir,recursive = TRUE)}
@@ -46,7 +46,7 @@ data.url <- config$data_url
 
 #datafile
 data.filename <- basename(data.url)
-data.file <- file.path(data.path,data.filename)
+data.file <- file.path(rawdata.path,data.filename)
 
 #download data
 if(config$refresh_data) {

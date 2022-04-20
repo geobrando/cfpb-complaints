@@ -1,11 +1,11 @@
 default:
-  global_pkgs: ["config","tidyverse","dtplyr"]
+  global_pkgs: ["config","tidyverse","dtplyr","lubridate","magrittr","scales"]
   data_url: "https://files.consumerfinance.gov/ccdb/complaints.csv.zip"
   data_folder: "data"
   raw_data_subfolder: "raw"
   processed_data_subfolder: "processed"
   output_folder: "output"
-  clear_output: FALSE
-  refresh_data: TRUE
+  clear_output: TRUE
+  refresh_data: FALSE
 
 
